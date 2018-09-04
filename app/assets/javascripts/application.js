@@ -21,7 +21,6 @@
 //
 //= require jquery
 //= require jquery-ui-1.9.2.custom
-//= require jquery-ui-1.9.2.sortable
 //= require jquery.ui.touch-punch.min.js
 //= require jquery_ujs
 //= require jquery.form
@@ -76,6 +75,7 @@
 //= require admin/emails.js
 //= require admin/payment_preferences.js
 //= require admin/transactions.js
+//= require admin/testimonials.js
 //= require payment_math
 //= require dropdown
 //= require jquery.nouislider
