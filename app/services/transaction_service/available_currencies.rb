@@ -3,6 +3,7 @@ module TransactionService::AvailableCurrencies
   # This list maps country codes to the best guess default currency to use
   # In a marketplace based on that country. For the others, it's USD
   COUNTRY_CURRENCIES = {
+      "AR" => "ARS",
       "AU" => "AUD",
       "KI" => "AUD",
       "TV" => "AUD",
@@ -15,6 +16,7 @@ module TransactionService::AvailableCurrencies
       "HK" => "HKD",
       "HU" => "HUF",
       "IL" => "ILS",
+      "IN" => "INR",
       "JP" => "JPY",
       "MY" => "MYR",
       "MX" => "MXN",
@@ -97,6 +99,7 @@ module TransactionService::AvailableCurrencies
   COUNTRY_SET_PAYPAL_ONLY = ISO3166::Country.all.map{|c| c.alpha2}
 
   VALID_CURRENCIES = {
+    "ARS" => :country_sets,
     "AUD" => :country_sets,
     "BRL" => "BR", # BRL is valid only for PayPal accounts in Brazil
     "CAD" => :country_sets,
@@ -107,6 +110,7 @@ module TransactionService::AvailableCurrencies
     "GBP" => :country_sets,
     "HKD" => :country_sets,
     "HUF" => :country_sets,
+    "INR" => "IN", # INR is valid only for PayPal accounts in India
     "ILS" => :country_sets,
     "JPY" => :country_sets,
     "MXN" => :country_sets,
