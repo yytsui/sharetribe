@@ -30,7 +30,8 @@ class Admin::TestimonialsService
   end
 
   def update
-    if params[:delete_review] && params[:testimonial][:blocked] == '0'
+    if params[:delete_review] &&
+       (params[:testimonial][:blocked].nil? || params[:testimonial][:blocked] == '0')
       testimonial.destroy && testimonial.tx.reload
     else
       testimonial.update_attributes(testimonial_params) &&
