@@ -90,6 +90,9 @@
 #  favicon_processing                         :boolean
 #  deleted                                    :boolean
 #  end_user_analytics                         :boolean          default(TRUE)
+#  footer_theme                               :integer          default(0)
+#  footer_copyright                           :text(65535)
+#  footer_enabled                             :boolean          default(FALSE)
 #
 # Indexes
 #
@@ -137,6 +140,9 @@ class Community < ApplicationRecord
   has_many :marketplace_sender_emails
 
   has_one :configuration, class_name: 'MarketplaceConfigurations'
+  has_one :social_logo, :dependent => :destroy
+
+  accepts_nested_attributes_for :social_logo
 
   after_create :initialize_settings
 
