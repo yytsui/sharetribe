@@ -142,9 +142,11 @@ class Community < ApplicationRecord
 
   has_one :configuration, class_name: 'MarketplaceConfigurations'
   has_many :social_links, -> { sorted }, :dependent => :destroy
+  has_one :social_logo, :dependent => :destroy
 
   accepts_nested_attributes_for :footer_menu_links, allow_destroy: true
   accepts_nested_attributes_for :social_links, allow_destroy: true
+  accepts_nested_attributes_for :social_logo
 
   after_create :initialize_settings
 
