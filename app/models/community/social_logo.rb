@@ -22,7 +22,7 @@ class Community::SocialLogo < ApplicationRecord
 
   has_attached_file :image,
                     :styles => {
-                      :thumbnail => "100x100#",
+                      :thumbnail => "200x100#",
                       :original => "1200x600>"
                     },
                     :convert_options => {
